@@ -1,0 +1,239 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('imagens/fundo01.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column; /* Para acomodar o rodapé */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Camada de desfoque no fundo */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(5px); /* Blur ajustado para 5px */
+    z-index: -1; /* Mantém o fundo atrás do conteúdo */
+}
+
+/* Estilo do cartão */
+.card {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparência leve */
+    backdrop-filter: blur(15px); /* Efeito de vidro desfocado */
+    -webkit-backdrop-filter: blur(15px); /* Suporte para navegadores Webkit */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil para o efeito vidro */
+}
+
+/* Foto redonda */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+}
+
+/* Nome e subtítulo */
+.name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff; /* Branco para contraste */
+    text-shadow: 0 0 6px rgba(0, 0, 0, 1); /* Contorno preto mais grosso e visível */
+    margin-bottom: 0; /* Reduzido de 2px para 0 */
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ff6200; /* Laranja */
+    font-weight: bold; /* Negrito */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 1), 0 2px 4px rgba(0, 0, 0, 0.5); /* Borda mais grossa e sombra preta */
+    margin-top: -7px; /* Reduzido de -2px para -5px */
+}
+
+/* Novo box de informações */
+.info-box {
+    background-color: rgba(255, 255, 255, 0.1); /* Mesmo efeito de vidro */
+    backdrop-filter: blur(15px); /* Desfoque interno */
+    -webkit-backdrop-filter: blur(15px); /* Suporte para Webkit */
+    border-radius: 15px;
+    padding: 15px;
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+}
+
+.info-box ul {
+    list-style: none;
+    color: #ffeb3b; /* Amarelo */
+    font-size: 1rem;
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centralizado */
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.9); /* Contorno preto mais grosso */
+}
+
+.info-box ul li {
+    margin-bottom: 10px;
+}
+
+.info-box ul li:last-child {
+    margin-bottom: 0; /* Remove margem do último item */
+}
+
+/* Botões */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-valores {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #fff;
+}
+
+/* Página de valores */
+.valores-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparência leve */
+    backdrop-filter: blur(15px); /* Efeito de vidro desfocado */
+    -webkit-backdrop-filter: blur(15px); /* Suporte para navegadores Webkit */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil para o efeito vidro */
+}
+
+.catalog-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff; /* Branco para contraste */
+    text-shadow: 0 0 6px rgba(0, 0, 0, 1); /* Contorno preto mais grosso, igual ao AUGUSTO */
+}
+
+.btn-catalog {
+    background-color: #ff0000; /* Vermelho */
+    color: #fff; /* Fonte branca */
+}
+
+.attention {
+    font-size: 1rem;
+    color: #fff; /* Branco */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.9); /* Contorno preto */
+}
+
+.btn-back {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Rodapé */
+.footer {
+    font-size: 0.8rem; /* Fonte pequena */
+    color: #ffffff; /* Branco explícito */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.5); /* Contorno e sombra preta */
+    text-align: center; /* Centralizado horizontalmente */
+    padding: 10px;
+    position: fixed; /* Fixo na parte inferior */
+    bottom: 0; /* Alinhado ao fundo */
+    left: 0; /* Garante que comece da esquerda */
+    width: 100%; /* Ocupa toda a largura */
+    z-index: 1; /* Acima do fundo desfocado */
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .card, .valores-container {
+        padding: 20px 10px;
+        max-width: 90%;
+    }
+
+    .name, .catalog-title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info-box {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .attention {
+        font-size: 0.9rem;
+    }
+
+    .footer {
+        font-size: 0.7rem;
+        padding: 5px;
+    }
+}
